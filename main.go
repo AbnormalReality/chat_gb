@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Privet, %s!", r.URL.Path[1:])
+  fmt.Fprintf(w, "Privet resolve, %s!", r.URL.Path[1:])
 }
