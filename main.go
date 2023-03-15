@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "net/http"
+)
 
-func main(){
-	fmt.Println("Merge Conflict")
+func main() {
+    http.HandleFunc("/", HelloServer)
+    http.ListenAndServe(":8080", nil)
+}
+
+func HelloServer(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintf(w, "Privet resolve, %s!", r.URL.Path[1:])
 }
